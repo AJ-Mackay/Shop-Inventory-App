@@ -34,7 +34,7 @@ def self.all()
   return results.map{|product| Product.new(product)}
 end
 
-def self.delete()
+def self.delete(id)
   sql = "DELETE FROM products WHERE id = $1"
   values - [id]
   SqlRunner.run(sql, values)

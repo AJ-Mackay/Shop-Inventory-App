@@ -22,6 +22,12 @@ def self.all()
   return results.map{|stock| StockItem.new(stock)}
 end
 
+def self.delete(id)
+  sql = "DELETE FROM stock_items WHERE id = $1"
+  values = [id]
+  SqlRunner.run(sql, values)
+end
+
 def self.delete_all()
   sql = "DELETE FROM stock_items"
   SqlRunner.run(sql)
