@@ -16,10 +16,24 @@ class StockItem
     @id = results.first()['id'].to_i
   end
 
+  def suppliers()
+    sql = "SELECT * FROM suppliers INNER JOIN products ON products.supplier_id = supplier.id WHERE products.stock_item_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|supplier| Supplier.new(supplier)}
+  end
+
   def self.all()
     sql = "SELECT * FROM stock_items"
     results = SqlRunner.run(sql)
     return results.map{|stock| StockItem.new(stock)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM stock_items WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return StockItem.new(results.first)
   end
 
   def self.delete(id)

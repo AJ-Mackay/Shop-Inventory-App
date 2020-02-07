@@ -28,6 +28,20 @@ class Product
     @id = results.first()['id'].to_i
   end
 
+  def stock_item()
+    sql = "SELECT * FROM stock_items WHERE id = $1"
+    values = [@stock_item_id]
+    results = SqlRunner.run(sql, values)
+    return StockItem.new(results.first)
+  end
+
+  def supplier()
+    sql = "SELECT * FROM suppliers WHERE id = $1"
+    values = [@supplier_id]
+    results = SqlRunner.run(sql, values)
+    return Supplier.new(results.first)
+  end
+
   def self.all()
     sql = "SELECT * FROM products"
     results = SqlRunner.run(sql)
