@@ -7,7 +7,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class SupplierTest < Minitest::Test
 
   def setup()
-    @supplier = Supplier.new("name" => "World of Books", "email" => "customerservice@worldofbooks.com", "contact_number" => "+44 (0)1903 507 544", "website" => "http://worldofbooks.com")
+    @supplier = Supplier.new({"name" => "World of Books", "email" => "customerservice@worldofbooks.com", "contact_number" => "+44 (0)1903 507 544", "website" => "http://worldofbooks.com"})
   end
 
   def test_supplier_has_name

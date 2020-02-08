@@ -5,9 +5,9 @@ require_relative('../models/product')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class ProductTest < Minitest::Test
-  
+
   def setup()
-    @product = Product.new("book_name" => "Drawing Blood", "author" => "Poppy Z. Brite", "genre" => "Horror", "description" => "desc. goes here", "supplier_id" => 1, "stock_item_id" => 6, "wholesale_price" => 7, "retail_price" => 12)
+    @product = Product.new({"book_name" => "Drawing Blood", "author" => "Poppy Z. Brite", "genre" => "Horror", "description" => "desc. goes here", "supplier_id" => 1, "stock_item_id" => 6, "wholesale_price" => 7, "retail_price" => 12})
   end
 
   def test_product_has_title
