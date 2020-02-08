@@ -2,17 +2,19 @@ require_relative('../db/sql_runner')
 
 class Supplier
 
-  attr_reader :id, :name, :contact_details
+  attr_reader :id, :name, :email,  :contact_number, :website
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @contact_details = options['contact_details']
+    @email = options['email']
+    @contact_number = options['contact_number']
+    @website = options['website']
   end
 
   def save()
-    sql = "INSERT INTO suppliers (name, contact_details) VALUES ($1, $2) RETURNING id"
-    values = [@name, @contact_details]
+    sql = "INSERT INTO suppliers (name, email, contact_number, website) VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@name, @email, @contact_number, @website]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

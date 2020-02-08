@@ -5,7 +5,9 @@ DROP TABLE stock_items;
 CREATE TABLE suppliers (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  contact_details TEXT
+  email VARCHAR(255),
+  contact_number VARCHAR(255),
+  website VARCHAR(255)
 );
 
 CREATE TABLE stock_items (
