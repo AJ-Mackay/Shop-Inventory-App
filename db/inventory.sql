@@ -22,7 +22,7 @@ CREATE TABLE products (
   genre VARCHAR(255),
   description TEXT,
   supplier_id INT REFERENCES suppliers(id),
-  stock_item_id INT REFERENCES stock_item(id),
+  stock_item_id INT REFERENCES stock_items(id),
   wholesale_price INT,
   retail_price INT
 );
