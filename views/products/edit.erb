@@ -8,11 +8,9 @@
 
   <label for="genre">Select a Genre:</label>
   <select class="genre" name="genre">
-    <option value="Autobiography" <%= "selected" if @product.genre == "Autobiography" %>>Autobiography</option>
-    <option value="Horror" <%= "selected" if @product.genre == "Horror" %>>Horror</option>
-    <option value="Popular Psychology" <%= "selected" if @product.genre == "Popular Psychology" %>>Popular Psychology</option>
-    <option value="Science Fiction" <%= "selected" if @product.genre == "Science Fiction" %>>Science Fiction</option>
-    <option value="Thriller" <%= "selected" if @product.genre == "Thriller" %>>Thriller</option>
+    <% for genre in @genres %>
+      <option value="<%= genre %>" <%= "selected" if @product.genre == genre %>><%= genre %></option>
+    <% end %>
   </select>
 
   <label for="description">Book Details:</label>
