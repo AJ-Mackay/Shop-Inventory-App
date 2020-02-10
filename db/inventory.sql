@@ -15,7 +15,7 @@ CREATE TABLE products (
   author VARCHAR(255),
   genre VARCHAR(255),
   description TEXT,
-  supplier_id INT REFERENCES suppliers(id),
+  supplier_id INT REFERENCES suppliers(id) ON DELETE CASCADE,
   quantity INT,
   wholesale_price INT,
   retail_price INT
