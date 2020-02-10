@@ -53,7 +53,7 @@ class Product
 
   def self.delete(id)
     sql = "DELETE FROM products WHERE id = $1"
-    values - [id]
+    values = [id]
     SqlRunner.run(sql, values)
   end
 

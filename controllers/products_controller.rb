@@ -24,7 +24,7 @@ post '/products' do
 end
 
 get '/products/:id/edit' do
-  @product = Product.fin(params[:id])
+  @product = Product.find(params[:id])
   erb(:"products/edit")
 end
 
