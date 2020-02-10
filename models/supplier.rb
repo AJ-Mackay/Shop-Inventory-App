@@ -22,7 +22,7 @@ class Supplier
 
   def update()
     sql = "UPDATE suppliers SET (name, email, contact_number, website) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@name, @email, @contact_number, @website]
+    values = [@name, @email, @contact_number, @website, @id]
     SqlRunner.run(sql, values)
   end
 
