@@ -2,7 +2,9 @@ require_relative('../db/sql_runner')
 
 class Product
 
-  attr_reader :id, :book_name, :author, :genre, :description, :supplier_id, :quantity, :wholesale_price, :retail_price
+  attr_reader :id
+
+  attr_accessor :book_name, :author, :genre, :description, :supplier_id, :quantity, :wholesale_price, :retail_price
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -39,6 +41,14 @@ class Product
     sql = "SELECT * FROM products"
     results = SqlRunner.run(sql)
     return results.map{|product| Product.new(product)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM products WHERE id = $1"
+    values = [id]
+    product = SqlRunner.run(sql, values)
+    result = Product.new(product.first)
+    return result
   end
 
   def self.delete(id)
