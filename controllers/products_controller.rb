@@ -27,6 +27,7 @@ end
 
 get '/products/:id/edit' do
   @product = Product.find(params[:id])
+  @suppliers = Supplier.all()
   erb(:"products/edit")
 end
 
