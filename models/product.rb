@@ -30,6 +30,12 @@ class Product
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE products SET (book_name, author, genre, description, supplier_id, quantity, wholesale_price, retail_price) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+    values = [@book_name, @author, @genre, @description, @supplier_id, @quantity, @wholesale_price, @retail_price, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def supplier()
     sql = "SELECT * FROM suppliers WHERE id = $1"
     values = [@supplier_id]
