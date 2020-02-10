@@ -1,0 +1,29 @@
+<form method="post" action="/products/<%= @product.id %>">
+
+  <label for="book-name">Title:</label>
+  <input type="text" name="book_name" id="book-name" value="<%= @product.book_name %>" />
+
+  <label for="author">Author:</label>
+  <input type="text" name="author" id="author" value="<%= @product.author %>" />
+
+  <label for="genre">Select a Genre:</label>
+  <select class="genre" name="genre">
+    <option value="Autobiography" <%= "selected" if @product.genre == "Autobiography" %>>Autobiography</option>
+    <option value="Horror" <%= "selected" if @product.genre == "Horror" %>>Horror</option>
+    <option value="Popular Psychology" <%= "selected" if @product.genre == "Popular Psychology" %>>Popular Psychology</option>
+    <option value="Science Fiction" <%= "selected" if @product.genre == "Science Fiction" %>>Science Fiction</option>
+    <option value="Thriller" <%= "selected" if @product.genre == "Thriller" %>>Thriller</option>
+  </select>
+
+</form>
+
+
+
+
+
+
+  @description = options['description']
+  @supplier_id = options['supplier_id'].to_i
+  @quantity = options['quantity'].to_i
+  @wholesale_price = options['wholesale_price'].to_i
+  @retail_price = options['retail_price'].to_i
