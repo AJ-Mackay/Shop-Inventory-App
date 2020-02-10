@@ -1,6 +1,5 @@
 <% @products.each do |product| %>
 <p>Title: <%= product.book_name() %></p>
-<p>Author: <%= product.author() %></p>
 <p>Quantity: <%= product.quantity() %></p>
 <p><a href="/products/<%= product.id %>">Show More Details</a></p>
 <hr />

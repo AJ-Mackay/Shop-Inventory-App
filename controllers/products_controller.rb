@@ -10,6 +10,12 @@ get '/products' do
   erb(:"products/index")
 end
 
+get '/products/all' do
+  @products = Product.all()
+  @suppliers = Supplier.all()
+  erb(:"products/show-all")
+end
+
 get '/products/new' do
   @products = Product.all()
   @suppliers = Supplier.all()
