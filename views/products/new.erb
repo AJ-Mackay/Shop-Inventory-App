@@ -1,0 +1,38 @@
+<form method="post" action="/products/<%= @product.id %>">
+
+  <label for="book-name">Title:</label>
+  <input type="text" name="book_name" id="book-name" />
+
+  <label for="author">Author:</label>
+  <input type="text" name="author" id="author" />
+
+  <label for="genre">Select a Genre:</label>
+  <select class="genre" name="genre">
+    <option value="Autobiography" <%= "selected" if @product.genre == "Autobiography" %>>Autobiography</option>
+    <option value="Horror" <%= "selected" if @product.genre == "Horror" %>>Horror</option>
+    <option value="Popular Psychology" <%= "selected" if @product.genre == "Popular Psychology" %>>Popular Psychology</option>
+    <option value="Science Fiction" <%= "selected" if @product.genre == "Science Fiction" %>>Science Fiction</option>
+    <option value="Thriller" <%= "selected" if @product.genre == "Thriller" %>>Thriller</option>
+  </select>
+
+  <label for="description">Book Details:</label>
+  <input type="text" name="description" id="description" />
+
+  <label for="supplier-name">Supplier:</label>
+  <select name="supplier_name" id="supplier-name">
+    <option value="Barter Books">Barter Books</option>
+    <option value="World of Books">World of Books</option>
+  </select>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" id="quantity" />
+
+  <label for="wholesale-price">Wholesale Cost: £</label>
+  <input type="text" name="wholesale_price" id="wholesale-price" />
+
+  <label for="retail-price">Retail: £</label>
+  <input type="text" name="retail_price" id="retail-price" />
+
+
+    <input type="submit" value="Save Details">
+</form>

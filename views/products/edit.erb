@@ -18,6 +18,9 @@
   <label for="description">Book Details:</label>
   <input type="text" name="description" id="description" value="<%= @product.description %>" />
 
+  <label for="supplier-id">Supplier:</label>
+  <input type="text" name="supplier_id" id="supplier-id" value="<%= @product.supplier_id %>" />
+
   <label for="quantity">Quantity:</label>
   <input type="number" name="quantity" id="quantity" value="<%= @product.quantity %>" />
 
@@ -25,7 +28,7 @@
   <input type="text" name="wholesale_price" id="wholesale-price" value="<%= @product.wholesale_price %>" />
 
   <label for="retail-price">Retail: £</label>
-  <input type="text" name="retail_price" id="retail-price" value="<%= @product.retail_price %>">
+  <input type="text" name="retail_price" id="retail-price" value="<%= @product.retail_price %>" />
 
   <input type="submit" value="Edit Details">
 </form>
