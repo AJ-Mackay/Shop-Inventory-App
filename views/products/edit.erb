@@ -20,8 +20,9 @@
 
   <label for="supplier-name">Supplier:</label>
   <select name="supplier_name" id="supplier-name">
-    <option value="Barter Books" <%= "selected" if @supplier_id == "Barter Books" %>>Barter Books</option>
-    <option value="World of Books" <%= "selected" if @supplier_id == "World of Books" %>>World of Books</option>
+    <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% end %>
   </select>
 
   <label for="quantity">Quantity:</label>

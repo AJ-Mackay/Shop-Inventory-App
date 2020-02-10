@@ -9,11 +9,9 @@
 
   <label for="genre">Select a Genre:</label>
   <select class="genre" name="genre">
-    <option value="Autobiography">Autobiography</option>
-    <option value="Horror">Horror</option>
-    <option value="Popular Psychology">Popular Psychology</option>
-    <option value="Science Fiction">Science Fiction</option>
-    <option value="Thriller">Thriller</option>
+    <% for product in @products %>
+      <option value="<%= product.genre %>"><%= product.genre %></option>
+    <% end %>
   </select>
 
   <label for="description">Book Details:</label>
@@ -21,8 +19,9 @@
 
   <label for="supplier-name">Supplier:</label>
   <select name="supplier_name" id="supplier-name">
-    <option value="Barter Books">Barter Books</option>
-    <option value="World of Books">World of Books</option>
+    <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% end %>
   </select>
 
   <label for="quantity">Quantity:</label>

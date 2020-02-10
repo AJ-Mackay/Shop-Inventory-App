@@ -1,14 +1,16 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/product')
+require_relative('../models/supplier')
 also_reload('../models/*')
 
 get '/products' do
-  @product = Product.all()
+  @products = Product.all()
   erb(:"products/index")
 end
 
 get '/products/new' do
+  @suppliers = Supplier.all()
   erb(:"products/new")
 end
 
