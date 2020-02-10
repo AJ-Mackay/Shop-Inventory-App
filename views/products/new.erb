@@ -18,7 +18,7 @@
   <input type="text" name="description" id="description" />
 
   <label for="supplier-name">Supplier:</label>
-  <select name="supplier_name" id="supplier-name">
+  <select name="supplier_id" id="supplier-name">
     <% for supplier in @suppliers %>
       <option value="<%= supplier.id %>"><%= supplier.name %></option>
     <% end %>
