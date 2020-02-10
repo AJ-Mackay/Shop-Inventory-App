@@ -1,11 +1,9 @@
 require_relative("../models/supplier.rb")
-require_relative("../models/stock_item.rb")
 require_relative("../models/product.rb")
 require("pry-byebug")
 
 Product.delete_all()
 Supplier.delete_all()
-StockItem.delete_all()
 
 supplier1 = Supplier.new({
   "name" => "Barter Books", "email" => "bb@barterbooks.co.uk", "contact_number" => "+44 (0)1665 604 888", "website" => "http://www.barterbooks.co.uk"
@@ -21,6 +19,3 @@ supplier3 = Supplier.new({
   "name" => "World of Books", "email" => "customerservice@worldofbooks.com", "contact_number" => "+44 (0)1903 507 544", "website" => "http://worldofbooks.com"
   })
 supplier3.save()
-
-stock_item1 = StockItem.new({"quantity" => ""})
-stock_item1.save()

@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Supplier
 
-  attr_reader :id, :name, :email,  :contact_number, :website
+  attr_reader :id, :name, :email, :contact_number, :website
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -19,11 +19,11 @@ class Supplier
     @id = results.first()['id'].to_i
   end
 
-  def stock_items()
-    sql = "SELECT * FROM stock_items INNER JOIN products ON products.stock_item_id = stock_item.id WHERE products.supplier_id = $1"
-    values = [@id]
+  def product()
+    sql = "SELECT * FROM products WHERE id = $1"
+    values = [@product_id]
     results = SqlRunner.run(sql, values)
-    return results.map{|stock_item| StockItem.new(stock_item)}
+    return Supplier.new(results.first)
   end
 
   def self.all()

@@ -7,7 +7,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class ProductTest < Minitest::Test
 
   def setup()
-    @product = Product.new({"book_name" => "Drawing Blood", "author" => "Poppy Z. Brite", "genre" => "Horror", "description" => "desc. goes here", "supplier_id" => 1, "stock_item_id" => 6, "wholesale_price" => 7, "retail_price" => 12})
+    @product = Product.new({"book_name" => "Drawing Blood", "author" => "Poppy Z. Brite", "genre" => "Horror", "description" => "desc. goes here", "supplier_id" => 1, "quantity" => 5, "wholesale_price" => 7, "retail_price" => 12})
   end
 
   def test_product_has_title
@@ -30,8 +30,8 @@ class ProductTest < Minitest::Test
     assert_equal(1, @product.supplier_id)
   end
 
-  def test_product_has_an_id
-    assert_equal(6, @product.stock_item_id)
+  def test_product_has_quantity
+    assert_equal(5, @product.quantity)
   end
 
   def test_product_wholesale
