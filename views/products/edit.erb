@@ -18,8 +18,11 @@
   <label for="description">Book Details:</label>
   <input type="text" name="description" id="description" value="<%= @product.description %>" />
 
-  <label for="supplier-id">Supplier:</label>
-  <input type="text" name="supplier_id" id="supplier-id" value="<%= @product.supplier_id %>" />
+  <label for="supplier-name">Supplier:</label>
+  <select name="supplier_name" id="supplier-name">
+    <option value="Barter Books" <%= "selected" if @supplier.name == "Barter Books" %>>Barter Books</option>
+    <option value="World of Books" <%= "selected" if @supplier.name == "World of Books" %>>World of Books</option>
+  </select>
 
   <label for="quantity">Quantity:</label>
   <input type="number" name="quantity" id="quantity" value="<%= @product.quantity %>" />
