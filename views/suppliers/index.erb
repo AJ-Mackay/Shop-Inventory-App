@@ -1,8 +1,5 @@
 <% @supplier.each do |supplier| %>
 <p>Name: <%= supplier.name() %></p>
-<p>E-mail: <%= supplier.email() %></p>
-<p>Contact Number: <%= supplier.contact_number %></p>
-<p>Website: <%= supplier.website %></p>
-<p><a href="/suppliers/<%= supplier.id %>">Show</a></p>
+<p><a href="/suppliers/<%= supplier.id %>">Show Details</a></p>
 <hr />
 <% end %>

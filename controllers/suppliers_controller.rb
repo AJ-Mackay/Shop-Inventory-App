@@ -4,7 +4,7 @@ require_relative('../models/supplier')
 also_reload('../models/*')
 
 get '/suppliers' do
-  @suppliers = Supplier.all()
+  @supplier = Supplier.all()
   erb(:"suppliers/index")
 end
 
