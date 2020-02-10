@@ -6,16 +6,27 @@ Product.delete_all()
 Supplier.delete_all()
 
 supplier1 = Supplier.new({
-  "name" => "Barter Books", "email" => "bb@barterbooks.co.uk", "contact_number" => "+44 (0)1665 604 888", "website" => "http://www.barterbooks.co.uk"
-  })
+  "name" => "Barter Books", "email" => "bb@barterbooks.co.uk", "contact_number" => "+44 (0)1665 604 888", "website" => "http://www.barterbooks.co.uk"})
 supplier1.save()
 
 supplier2 = Supplier.new({
-  "name" => "Wordery", "email" => "help@wordery.com", "contact_number" => "N/A", "website" => "http://wordery.com"
-  })
+  "name" => "World of Books", "email" => "customerservice@worldofbooks.com", "contact_number" => "+44 (0)1903 507 544", "website" => "http://worldofbooks.com"})
 supplier2.save()
 
-supplier3 = Supplier.new({
-  "name" => "World of Books", "email" => "customerservice@worldofbooks.com", "contact_number" => "+44 (0)1903 507 544", "website" => "http://worldofbooks.com"
-  })
-supplier3.save()
+product1 = Product.new({"book_name" => "Drawing Blood", "author" => "Poppy Z. Brite", "genre" => "Horror", "description" => "Penguin, 2010, Paperback", "quantity" => 17, "wholesale_price" => 7, "retail_price" => 12})
+product1.save()
+
+product2 = Product.new({"book_name" => "Mindset", "author" => "Dr Carol S. Dweck", "genre" => "Popular Psychology", "description" => "Robinson, 2017, Paperback", "quantity" => 3, "wholesale_price" => 4, "retail_price" => 11})
+product2.save()
+
+product3 = Product.new({"book_name" => "Alice Isn't Dead", "author" => "Joseph Fink", "genre" => "Science Fiction", "description" => "Harper Perennial, 2018, Hardcover", "quantity" => 0, "wholesale_price" => 10, "retail_price" => 15})
+product3.save()
+
+product4 = Product.new({"book_name" => "House of Leaves", "author" => "Mark Z. Danielewski", "genre" => "Thriller", "description" => "Doubleday, 2000, Paperback", "quantity" => 10, "wholesale_price" => 20, "retail_price" => 28})
+product4.save()
+
+product5 = Product.new({"book_name" => "Seriously...I'm Kidding", "author" => "Ellen DeGeneres", "genre" => "Autobiography", "description" => "Grand Central Publishing, 2013, Paperback", "quantity" => 7, "wholesale_price" => 8, "retail_price" => 13})
+product5.save()
+
+binding.pry
+nil
