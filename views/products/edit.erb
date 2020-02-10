@@ -15,15 +15,17 @@
     <option value="Thriller" <%= "selected" if @product.genre == "Thriller" %>>Thriller</option>
   </select>
 
+  <label for="description">Book Details:</label>
+  <input type="text" name="description" id="description" value="<%= @product.description %>" />
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" id="quantity" value="<%= @product.quantity %>" />
+
+  <label for="wholesale-price">Wholesale Cost: £</label>
+  <input type="text" name="wholesale_price" id="wholesale-price" value="<%= @product.wholesale_price %>" />
+
+  <label for="retail-price">Retail: £</label>
+  <input type="text" name="retail_price" id="retail-price" value="<%= @product.retail_price %>">
+
+  <input type="submit" value="Edit Details">
 </form>
-
-
-
-
-
-
-  @description = options['description']
-  @supplier_id = options['supplier_id'].to_i
-  @quantity = options['quantity'].to_i
-  @wholesale_price = options['wholesale_price'].to_i
-  @retail_price = options['retail_price'].to_i
