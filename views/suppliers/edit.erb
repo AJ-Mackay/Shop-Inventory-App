@@ -1,19 +1,22 @@
 <h1>EDIT SUPPLIER DETAILS</h1>
 
 <form method="post" action="/suppliers/<%= @supplier.id %>">
-
+  <p>
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" value="<%= @supplier.name %>" />
-
+  </p>
+  <p>
   <label for="email">E-Mail:</label>
   <input type="text" name="email" id="email" value="<%= @supplier.email %>" />
-
+  </p>
+  <p>
   <label for="contact-number">Telephone:</label>
   <input type="text" name="contact_number" id="contact-number" value="<%= @supplier.contact_number %>" />
-
+  </p>
+  <p>
   <label for="website">Website:</label>
   <input type="text" name="website" id="website" value="<%= @supplier.website %>" />
-
+  </p>
   <input type="submit" value="Update">
 
 </form>
