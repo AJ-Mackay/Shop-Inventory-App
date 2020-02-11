@@ -13,7 +13,8 @@ end
 get '/products/all' do
   @products = Product.all()
   @suppliers = Supplier.all()
-  erb(:"products/show-all")
+  @product = Product.find(params[:id])
+  erb(:"products/all")
 end
 
 get '/products/new' do
