@@ -25,6 +25,7 @@ end
 
 get '/products/:id' do
   @product = Product.find(params[:id])
+  @suppliers = Supplier.all()
   erb(:"products/show")
 end
 

@@ -2,7 +2,7 @@
 <p>Name: <%= @supplier.name %></p>
 <p>E-mail: <%= @supplier.email %></p>
 <p>Telephone: <%= @supplier.contact_number %></p>
-<p>Website: <%= @supplier.website %></p>
+<p>Website: <a href="<%= @supplier.website %>"><%= @supplier.website %></a></p>
 <p><a href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier</a></p>
 <form method="post" action="/suppliers/<%= @supplier.id %>/delete">
   <input type="submit" value="Delete Supplier" />

@@ -2,6 +2,16 @@ body {
   background-color: beige;
 }
 
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.float {
+  width: 20%;
+  float: left;
+}
+
 h1 {
   text-align: center;
 }
@@ -34,13 +44,10 @@ li a:hover {
   background-color: #4CAF50;
 }
 
-#spacing  {
-  display: flex;
-}
-
 .record {
+  text-align: center;
   border: 5px double;
-  margin: 0 35px 30px 0;
+  margin: 0 30px 30px 30px;
   padding: 25px;
   width: 200px;
 }

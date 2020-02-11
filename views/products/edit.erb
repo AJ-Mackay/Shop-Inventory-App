@@ -1,7 +1,12 @@
 <form method="post" action="/products/<%= @product.id %>">
-
+  <p>
+  <label for="picture">Image Link:</label>
+  <input type="text" name="picture" value="<%= @product.picture %>">
+  </p>
+  <p>
   <label for="book-name">Title:</label>
   <input type="text" name="book_name" id="book-name" value="<%= @product.book_name %>" />
+  </p>
   <p>
   <label for="author">Author:</label>
   <input type="text" name="author" id="author" value="<%= @product.author %>" />

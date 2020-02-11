@@ -1,6 +1,5 @@
-<div id="spacing">
 <% @products.each do |product| %>
-<div class="record">
+<div class="record float">
 <p><img src="<%= product.picture %>" height="220" width="140"></p>
 <p>Title: <%= product.book_name %></p>
 <p>Author: <%= product.author %></p>
@@ -21,4 +20,3 @@
 </form>
 </div>
 <% end %>
-</div>

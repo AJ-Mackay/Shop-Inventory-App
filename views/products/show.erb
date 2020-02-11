@@ -3,6 +3,11 @@
 <p>Author: <%= @product.author %></p>
 <p>Genre: <%= @product.genre %></p>
 <p>Details: <%= @product.description %></p>
+<% @suppliers.each do |supplier| %>
+<% if supplier.id == @product.supplier_id %>
+<p>Supplier: <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></p>
+  <% end %>
+  <% end %>
 <p>Quantity: <%= @product.quantity %> <br>
 <p class="<%= @product.quantity_level[:color] %>"><%= @product.quantity_level[:text] %></p>
 <p>Wholesale Price: £<%= @product.wholesale_price %></p>

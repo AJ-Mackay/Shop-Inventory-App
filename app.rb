@@ -7,5 +7,5 @@ require_relative('./models/supplier')
 also_reload('./models/*')
 
 get '/' do
-  erb(:index)
+  redirect to '/products'
 end
