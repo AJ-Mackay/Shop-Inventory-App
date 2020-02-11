@@ -1,9 +1,9 @@
-<p> <%= @product.picture %></p>
+<p><img src="<%= @product.picture %>" height="220" width="140"></p>
 <p>Title: <%= @product.book_name %></p>
 <p>Author: <%= @product.author %></p>
 <p>Genre: <%= @product.genre %></p>
 <p>Details: <%= @product.description %></p>
-<p>Quantity: <%= @product.quantity %> </p>
+<p>Quantity: <%= @product.quantity %></p>
 <p>Wholesale Price: £<%= @product.wholesale_price %></p>
 <p>Retail Price: £<%= @product.retail_price %></p>
 <p><a href="/products/<%= @product.id %>/edit">Edit Book Details</a></p>
