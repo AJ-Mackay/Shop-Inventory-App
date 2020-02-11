@@ -1,8 +1,8 @@
-<div id="spacing"
+<div id="spacing">
 <% @products.each do |product| %>
 <% @suppliers.each do |supplier| %>
 <div class="record">
-<p><img src="<%= product.picture %>"</p>
+<p><img src="<%= product.picture %>" height="220" width="140"></p>
 <p>Title: <%= product.book_name %></p>
 <p>Author: <%= product.author %></p>
 <p>Genre: <%= product.genre %></p>
