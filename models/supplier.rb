@@ -3,10 +3,11 @@ require_relative('../db/sql_runner')
 class Supplier
 
   attr_reader :id
-  attr_accessor :name, :email, :contact_number, :website
+  attr_accessor :picture, :name, :email, :contact_number, :website
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
+    @picture = options['picture']
     @name = options['name']
     @email = options['email']
     @contact_number = options['contact_number']
@@ -14,15 +15,15 @@ class Supplier
   end
 
   def save()
-    sql = "INSERT INTO suppliers (name, email, contact_number, website) VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@name, @email, @contact_number, @website]
+    sql = "INSERT INTO suppliers (picture, name, email, contact_number, website) VALUES ($1, $2, $3, $4, $5) RETURNING id"
+    values = [@picture, @name, @email, @contact_number, @website]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE suppliers SET (name, email, contact_number, website) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@name, @email, @contact_number, @website, @id]
+    sql = "UPDATE suppliers SET (picture, name, email, contact_number, website) = ($1, $2, $3, $4, $5) WHERE id = $6"
+    values = [@picture, @name, @email, @contact_number, @website, @id]
     SqlRunner.run(sql, values)
   end
 

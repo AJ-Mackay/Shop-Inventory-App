@@ -3,6 +3,7 @@ DROP TABLE suppliers;
 
 CREATE TABLE suppliers (
   id SERIAL PRIMARY KEY,
+  picture VARCHAR(255),
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255),
   contact_number VARCHAR(255),
