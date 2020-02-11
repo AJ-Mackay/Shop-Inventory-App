@@ -1,11 +1,16 @@
-<p>Title: <%= @product.book_name %></p>
-<p>Author: <%= @product.author %></p>
-<p>Genre: <%= @product.genre %></p>
-<p>Details: <%= @product.description %></p>
-<p>Quantity: <%= @product.quantity %> </p>
-<p>Wholesale Price: £<%= @product.wholesale_price %></p>
-<p>Retail Price: £<%= @product.retail_price %></p>
-<p><a href="/products/<%= @product.id %>/edit">Edit Book Details</a></p>
-<form method="post" action="/products/<%= @product.id %>/delete">
+<% @products.each do |product| %>
+<% @suppliers.each do |supplier| %>
+<p>Title: <%= product.book_name %></p>
+<p>Author: <%= product.author %></p>
+<p>Genre: <%= product.genre %></p>
+<p>Details: <%= product.description %></p>
+<p>Supplier: <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></p>
+<p>Quantity: <%= product.quantity %></p>
+<p>Wholesale Price: £<%= product.wholesale_price %></p>
+<p>Retail Price: £<%= product.retail_price %></p>
+<p><a href="/products/<%= product.id %>/edit">Edit Book Details</a></p>
+<form method="post" action="/products/<%= product.id %>/delete">
   <input type="submit" value="Delete Book Record" />
 </form>
+<% end %>
+<% end %>
