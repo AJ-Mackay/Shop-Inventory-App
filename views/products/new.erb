@@ -3,36 +3,42 @@
 
   <label for="book-name">Title:</label>
   <input type="text" name="book_name" id="book-name" />
-
+  <p>
   <label for="author">Author:</label>
   <input type="text" name="author" id="author" />
-
+  </p>
+  <p>
   <label for="genre">Select a Genre:</label>
   <select class="genre" name="genre">
     <% for product in @products %>
       <option value="<%= product.genre %>"><%= product.genre %></option>
     <% end %>
   </select>
-
+  </p>
+  <p>
   <label for="description">Book Details:</label>
   <input type="text" name="description" id="description" />
-
+  </p>
+  <p>
   <label for="supplier-name">Supplier:</label>
   <select name="supplier_id" id="supplier-name">
     <% for supplier in @suppliers %>
       <option value="<%= supplier.id %>"><%= supplier.name %></option>
     <% end %>
   </select>
-
+  </p>
+  <p>
   <label for="quantity">Quantity:</label>
   <input type="number" name="quantity" id="quantity" />
-
+  </p>
+  <p>
   <label for="wholesale-price">Wholesale Cost: £</label>
   <input type="text" name="wholesale_price" id="wholesale-price" />
-
+  </p>
+  <p>
   <label for="retail-price">Retail: £</label>
   <input type="text" name="retail_price" id="retail-price" />
-
+  </p>
 
     <input type="submit" value="Save Details">
 </form>

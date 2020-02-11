@@ -2,35 +2,41 @@
 
   <label for="book-name">Title:</label>
   <input type="text" name="book_name" id="book-name" value="<%= @product.book_name %>" />
-
+  <p>
   <label for="author">Author:</label>
   <input type="text" name="author" id="author" value="<%= @product.author %>" />
-
+  </p>
+  <p>
   <label for="genre">Select a Genre:</label>
   <select class="genre" name="genre">
     <% for genre in @genres %>
       <option value="<%= genre %>" <%= "selected" if @product.genre == genre %>><%= genre %></option>
     <% end %>
   </select>
-
+  </p>
+  <p>
   <label for="description">Book Details:</label>
   <input type="text" name="description" id="description" value="<%= @product.description %>" />
-
+  </p>
+  <p>
   <label for="supplier-name">Supplier:</label>
   <select name="supplier_id" id="supplier-name">
     <% for supplier in @suppliers %>
       <option value="<%= supplier.id %>"><%= supplier.name %></option>
     <% end %>
   </select>
-
+  </p>
+  <p>
   <label for="quantity">Quantity:</label>
   <input type="number" name="quantity" id="quantity" value="<%= @product.quantity %>" />
-
+  </p>
+  <p>
   <label for="wholesale-price">Wholesale Cost: £</label>
   <input type="text" name="wholesale_price" id="wholesale-price" value="<%= @product.wholesale_price %>" />
-
+  </p>
+  <p>
   <label for="retail-price">Retail: £</label>
   <input type="text" name="retail_price" id="retail-price" value="<%= @product.retail_price %>" />
-
+  </p>
   <input type="submit" value="Edit Details">
 </form>
