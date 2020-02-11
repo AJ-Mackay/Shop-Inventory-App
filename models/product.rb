@@ -44,6 +44,16 @@ class Product
     return Supplier.new(results.first)
   end
 
+  def quantity_level()
+    if @quantity == 0
+      return {color: "red", text: "Out of Stock"}
+    elsif @quantity <= 5
+      return {color: "orange", text: "Low Stock"}
+    else
+      return {color: "green", text: "In Stock"}
+    end
+  end
+
   def self.all()
     sql = "SELECT * FROM products"
     results = SqlRunner.run(sql)

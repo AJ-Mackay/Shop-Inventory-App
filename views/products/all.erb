@@ -1,14 +1,17 @@
 <div id="spacing">
 <% @products.each do |product| %>
-<% @suppliers.each do |supplier| %>
 <div class="record">
 <p><img src="<%= product.picture %>" height="220" width="140"></p>
 <p>Title: <%= product.book_name %></p>
 <p>Author: <%= product.author %></p>
 <p>Genre: <%= product.genre %></p>
 <p>Details: <%= product.description %></p>
-<p>Supplier: <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></p>
-<p>Quantity: <%= product.quantity %></p>
+<% @suppliers.each do |supplier| %>
+<p>Supplier: <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a>
+  <% end %>
+</p>
+<p>Quantity: <%= product.quantity %> <br>
+<p class="<%= product.quantity_level[:color] %>"><%= product.quantity_level[:text] %></p>
 <p>Wholesale Price: £<%= product.wholesale_price %></p>
 <p>Retail Price: £<%= product.retail_price %></p>
 <p><a href="/products/<%= product.id %>/edit">Edit Book Details</a></p>
@@ -16,6 +19,5 @@
   <input type="submit" value="DELETE" />
 </form>
 </div>
-<% end %>
 <% end %>
 </div>

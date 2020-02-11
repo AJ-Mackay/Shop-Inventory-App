@@ -1,6 +1,6 @@
 <% @products.each do |product| %>
 Title: <%= product.book_name() %><br>
-Quantity: <%= product.quantity() %>
+<p class="<%= product.quantity_level[:color] %>"><%= product.quantity_level[:text] %>
 <p><a href="/products/<%= product.id %>">Show More Details</a></p>
-<hr />
+<hr/>
 <% end %>

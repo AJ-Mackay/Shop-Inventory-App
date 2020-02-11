@@ -20,3 +20,15 @@ ul {
   padding: 25px;
   width: 200px;
 }
+
+p.green{
+  color: #008000;
+}
+
+p.red{
+  color: #FF0000;
+}
+
+p.orange{
+  color: #FF8C00;
+}
