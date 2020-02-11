@@ -4,10 +4,11 @@ class Product
 
   attr_reader :id
 
-  attr_accessor :book_name, :author, :genre, :description, :supplier_id, :quantity, :wholesale_price, :retail_price
+  attr_accessor :picture, :book_name, :author, :genre, :description, :supplier_id, :quantity, :wholesale_price, :retail_price
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
+    @picture = options['picture']
     @book_name = options['book_name']
     @author = options['author']
     @genre = options['genre']
@@ -20,19 +21,19 @@ class Product
 
   def save()
     sql = "INSERT INTO products (
-    book_name, author, genre, description, supplier_id, quantity, wholesale_price, retail_price
+    picture, book_name, author, genre, description, supplier_id, quantity, wholesale_price, retail_price
   )
   VALUES (
-    $1, $2, $3, $4, $5, $6, $7, $8
+    $1, $2, $3, $4, $5, $6, $7, $8, $9
     ) RETURNING id"
-    values = [@book_name, @author, @genre, @description, @supplier_id, @quantity, @wholesale_price, @retail_price]
+    values = [@picture, @book_name, @author, @genre, @description, @supplier_id, @quantity, @wholesale_price, @retail_price]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE products SET (book_name, author, genre, description, supplier_id, quantity, wholesale_price, retail_price) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
-    values = [@book_name, @author, @genre, @description, @supplier_id, @quantity, @wholesale_price, @retail_price, @id]
+    sql = "UPDATE products SET (picture, book_name, author, genre, description, supplier_id, quantity, wholesale_price, retail_price) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10"
+    values = [@picture, @book_name, @author, @genre, @description, @supplier_id, @quantity, @wholesale_price, @retail_price, @id]
     SqlRunner.run(sql, values)
   end
 

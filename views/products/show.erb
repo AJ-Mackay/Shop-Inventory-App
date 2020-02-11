@@ -1,3 +1,4 @@
+<p> <%= @product.picture %></p>
 <p>Title: <%= @product.book_name %></p>
 <p>Author: <%= @product.author %></p>
 <p>Genre: <%= @product.genre %></p>
@@ -7,5 +8,5 @@
 <p>Retail Price: £<%= @product.retail_price %></p>
 <p><a href="/products/<%= @product.id %>/edit">Edit Book Details</a></p>
 <form method="post" action="/products/<%= @product.id %>/delete">
-  <input type="submit" value="Delete Book Record" />
+  <input type="submit" value="DELETE" />
 </form>

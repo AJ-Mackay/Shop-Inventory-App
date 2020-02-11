@@ -9,3 +9,14 @@ h1 {
 ul {
   list-style-type: none;
 }
+
+#spacing  {
+  margin-left: 200px;
+}
+
+.record {
+  border: 5px double;
+  margin: 0 35px 30px 0;
+  padding: 25px;
+  width: 200px;
+}

@@ -11,6 +11,7 @@ CREATE TABLE suppliers (
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
+  picture VARCHAR(255),
   book_name VARCHAR(255),
   author VARCHAR(255),
   genre VARCHAR(255),
