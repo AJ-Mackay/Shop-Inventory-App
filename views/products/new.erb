@@ -10,8 +10,8 @@
   <p>
   <label for="genre">Select a Genre:</label>
   <select class="genre" name="genre">
-    <% for product in @products %>
-      <option value="<%= product.genre %>"><%= product.genre %></option>
+    <% for genre in @genres %>
+      <option value="<%= genre %>"><%= genre %></option>
     <% end %>
   </select>
   </p>

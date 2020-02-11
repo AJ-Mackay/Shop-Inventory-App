@@ -19,6 +19,7 @@ end
 get '/products/new' do
   @products = Product.all()
   @suppliers = Supplier.all()
+  @genres = Genre.all()
   erb(:"products/new")
 end
 
