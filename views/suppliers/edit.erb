@@ -2,6 +2,10 @@
 
 <form method="post" action="/suppliers/<%= @supplier.id %>">
   <p>
+  <label for="picture">Image Link:</label>
+  <input type="text" name="picture" value="<%= @supplier.picture %>">
+  </p>
+  <p>
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" value="<%= @supplier.name %>" />
   </p>
