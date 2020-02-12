@@ -26,4 +26,4 @@ Calculate the markup on items in the store, and display it in the inventory
 Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author.
 Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
 
-Technologies used - Ruby, PostgreSQL, HTML & CSS.
+Technologies used - Ruby, PostgreSQL, PG Gem, Sinatra, HTML & CSS.
