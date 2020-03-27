@@ -14,6 +14,7 @@ class SqlRunner
       }
     else
       database_config = {host:"localhost", dbname:"inventory"}
+    end
     begin
       db = PG.connect(database_config)
       db.prepare("query", sql)
