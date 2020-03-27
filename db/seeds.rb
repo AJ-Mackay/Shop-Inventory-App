@@ -1,6 +1,5 @@
 require_relative("../models/supplier.rb")
 require_relative("../models/product.rb")
-require("pry-byebug")
 
 Product.delete_all()
 Supplier.delete_all()
@@ -25,6 +24,3 @@ product4.save()
 
 product5 = Product.new({"picture" => "/images/Kidding.jpg", "book_name" => "Seriously...I'm Kidding", "author" => "Ellen DeGeneres", "genre" => "Autobiography", "description" => "Grand Central Publishing, 2013, Paperback", "supplier_id" => supplier2.id, "quantity" => 7, "wholesale_price" => 8, "retail_price" => 13})
 product5.save()
-
-binding.pry
-nil
